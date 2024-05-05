@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public class Worker implements Worker_interface,Serializable{
-    static int workerNum =0;
+    private static int workerNum =0;
     private int Id;
     private String username;
     private String password;
@@ -37,6 +37,9 @@ public class Worker implements Worker_interface,Serializable{
     }
     public void setPassword(String password){
         this.password = password;
+    }
+    public static void setWorkerNum(int num){
+        workerNum = num;
     }
 
 
