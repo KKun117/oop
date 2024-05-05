@@ -18,9 +18,9 @@ public class Main {
             work_list = new ArrayList<>();
             pkg_list = new ArrayList<>();
         }
-        Package.numPackages = pkg_list.size();
-        User.userNum = user_list.size();
-        Worker.workerNum = work_list.size();
+        Package.setnumPackages(pkg_list.size());
+        User.setUserNum(user_list.size());
+        Worker.setWorkerNum(work_list.size());
 
 
     
