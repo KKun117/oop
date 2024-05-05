@@ -19,6 +19,9 @@ Classes that might be considered for Class Diagram
 ● Package 
 ● Company
 
+### Instruction to run the program
+● To run the admin login, we set up a root user with username = "root" and password = "root". After root user login, he can create admin account for the other admin. Admin is not allowed to create a new account without logging to an admin account.
+
 **Team Members**
 Subi Hwang sh7218@nyu.edu 
 Rena Wang rw2907@nyu.edu 
