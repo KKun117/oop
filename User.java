@@ -1,7 +1,7 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 public class User implements User_interface,Serializable{
-    public static int userNum =0;
+    private static int userNum =0;
     private int ID;
     private String username;
     private String password;
@@ -51,6 +51,10 @@ public class User implements User_interface,Serializable{
     }
     public void setPassword(String password){
         this.password = password;
+    }
+
+    public static void setUserNum(int num){
+        userNum = num;
     }
 
 }
