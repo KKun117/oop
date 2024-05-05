@@ -3,7 +3,7 @@
 import java.io.Serializable;
 
 class Package implements PackageInterface,Serializable {
-    public static int numPackages = 0;
+    private static int numPackages = 0;
     private int id;
     private int senderID;
     private int receiverID;
@@ -42,6 +42,9 @@ class Package implements PackageInterface,Serializable {
 
     public int getReceiverId(){
         return this.receiverID;
+    }
+    public static void setnumPackages(int num){
+        numPackages = num;
     }
 }
 
