@@ -26,3 +26,5 @@ Classes that might be considered for Class Diagram
 Subi Hwang sh7218@nyu.edu 
 Rena Wang rw2907@nyu.edu 
 Linkun Wan lw2861@nyu.edu 
+
+#Note:Our team worked in person with the code, so the commits percentage on GitHub cannot reflect our true participation in this project
