@@ -31,10 +31,12 @@ public class Main {
         MailingServiceSystem mss = new MailingServiceSystem(pkg_list);
         
         outer:while(true){
+            System.out.println("-------------------MAIN----------------");
             System.out.println("1.Register");
             System.out.println("2.User Login");
             System.out.println("3.Worker Login");
             System.out.println("4.Quit");
+            System.out.print("Please enter your option:");
             int choice = scanner.nextInt();
             scanner.nextLine();
             if(choice ==1){
@@ -43,6 +45,7 @@ public class Main {
             }else if(choice==2){
                 User user = user_login_GUI(user_list);
                 if(user!=null){
+                    System.out.println("-------------------USER----------------");
                     System.out.println("Hello, User "+user.getUsername());
                     inner:while(true){
                         System.out.println("1.Send Package");
@@ -50,21 +53,33 @@ public class Main {
                         System.out.println("3.Package Sent");
                         System.out.println("4.Check Your ID");
                         System.out.println("5.Quit");
+                        System.out.print("Please enter your option:");
                         int choice2 = scanner.nextInt();
                         scanner.nextLine();
                         if(choice2==1){
+                            System.out.println("======");
                             System.out.println("Please enter receiver's ID");
                             int receiverId = scanner.nextInt();
                             scanner.nextLine();
                             user.sendPackage(mss, receiverId);
                             System.out.println("Sent successfully");
+                            System.out.println("_____");
                         }else if(choice2==2){
+                            System.out.println("======");
+                            System.out.println("HERE ARE THE PACAKGES:");
                             mss.show_pkg_list(user.checkReceivingPackage(mss));
+                            System.out.println("_____");
                         }else if(choice2==3){
+                            System.out.println("======");
+                            System.out.println("HERE ARE THE PACAKGES:");
                             mss.show_pkg_list(user.checkSendingPackage(mss));
+                            System.out.println("_____");
                         }else if(choice2==4){
-                            System.out.println(user.getID());
+                            System.out.println("======");
+                            System.out.println("Your ID is: "+ user.getID());
+                            System.out.println("_____");
                         }else if(choice2==5){
+                            System.out.println("====== logging out .... ");
                             break outer;
                         }else{
                             System.out.println("Invalid Input");
@@ -77,14 +92,17 @@ public class Main {
             }else if(choice ==3){
                 Worker worker = worker_login_GUI(work_list);
                 if(worker!=null){
+                    System.out.println("-------------------ADMIN----------------");
                     System.out.println("Hello, Admin "+worker.getUsername());
                     while(true){
                         System.out.println("1.Update Package Status");
                         System.out.println("2.Create New Admin Account");
                         System.out.println("3.Exit");
+                        System.out.print("Please enter your option:");
                         int choice3 = scanner.nextInt();
                         scanner.nextLine();
                         if(choice3==1){
+                            System.out.println("======");
                             System.out.println("What is Tracking ID?");
                             int id = scanner.nextInt();
                             Package newpkg = null;
@@ -101,7 +119,9 @@ public class Main {
                             }else{
                                 System.out.println("Package does not exsit");
                             }
+                            System.out.println("_____");
                         }else if(choice3==2){
+                            System.out.println("======");
                             System.out.println("What is new user name for admin?");
                             String username = scanner.nextLine();
                             System.out.println("What is new user password for admin?");
@@ -109,7 +129,9 @@ public class Main {
                             Worker newworker = new Worker(username,password);
                             work_list.add(newworker);
                             System.out.println("Admin added successfully");
+                            System.out.println("_____");
                         }else if(choice3==3){
+                            System.out.println("====== logging out .... ");
                             break outer;
                         }else{
                             System.out.println("Invalid Input");
